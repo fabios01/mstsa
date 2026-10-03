@@ -46,8 +46,8 @@ class Microsynt(object):
 
     def empirical_entropy_representation(self) -> None:
         # word entropies of empirical microstate sequence
-        hs_emp = np.zeros(self.nt-self.w)
-        for t in range(self.nt-self.w):
+        hs_emp = np.zeros(self.nt-self.w+1)
+        for t in range(self.nt-self.w+1):
             # translate 'word' into key and retrieve entropy for that word
             k = self.translate_seq2key(self.data[t:t+self.w])
             hs_emp[t] = self.theo_dict[k]
